@@ -41,8 +41,8 @@ pico_set_program_name(aula_02_tarefa_01 "aula_02_tarefa_01")
 pico_set_program_version(aula_02_tarefa_01 "0.1")
 
 # Modify the below lines to enable/disable output over UART/USB
-pico_enable_stdio_uart(aula_02_tarefa_01 1)
-pico_enable_stdio_usb(aula_02_tarefa_01 0)
+pico_enable_stdio_uart(aula_02_tarefa_01 0)
+pico_enable_stdio_usb(aula_02_tarefa_01 1)
 
 # Add the standard library to the build
 target_link_libraries(aula_02_tarefa_01
@@ -56,6 +56,10 @@ target_include_directories(aula_02_tarefa_01 PRIVATE
 # Add any user requested libraries
 target_link_libraries(aula_02_tarefa_01 
         hardware_adc
+        hardware_clocks
+        hardware_pwm
+        hardware_timer
+        pico_multicore
         )
 
 pico_add_extra_outputs(aula_02_tarefa_01)
